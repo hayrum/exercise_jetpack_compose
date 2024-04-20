@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Jetpack Compose Tutorial</string>
+    <string name="firstParagraph">Jetpack Compose is a modern toolkit for building native Android UI. Compose simplifies and accelerates UI development on Android with less code, powerful tools, and intuitive Kotlin APIs.</string>
+    <string name="secondParagraph">In this tutorial, you build a simple UI component with declarative functions. You call Compose functions to say what elements you want and the Compose compiler does the rest. Compose is built around Composable functions. These functions let you define your app\'s UI programmatically because they let you describe how it should look and provide data dependencies, rather than focus on the process of the UI\'s construction, such as initializing an element and then attaching it to a parent. To create a Composable function, you add the @Composable annotation to the function name.</string>
+    <string name="title_activity_admin_tasks">AdminTasks</string>
+    <string name="all_tasks_completed">All tasks completed</string>
+    <string name="nice_work">Nice work!</string>
+    <string name="title_activity_compose_quadrant">ComposeQuadrant</string>
+    <string name="first_title">Text composable</string>
+    <string name="first_description">Displays text and follows the recommended Material Design guidelines.</string>
+    <string name="second_title">Image composable</string>
+    <string name="second_description">Creates a composable that lays out and draws a given Painter class object.</string>
+    <string name="third_title">Row composable</string>
+    <string name="third_description">A layout composable that places its children in a horizontal sequence.</string>
+    <string name="fourth_title">Column composable</string>
+    <string name="fourth_description">A layout composable that places its children in a vertical sequence.</string>
+    <string name="title_activity_presentation_card">PresentationCard</string>
+    <string name="developer_name">Hayrum Vega</string>
+    <string name="android_developer_extraordinaire">Android Developer Extraordinaire</string>
+    <string name="call_phone">Call phone</string>
+    <string name="description_phone">(662) 373 34 66</string>
+    <string name="share">Share</string>
+    <string name="description_share">\@HayrumVega</string>
+    <string name="email">email</string>
+    <string name="description_email">hayrum97@gmail.com</string>
+    <string name="title_activity_dice_roller">DiceRoller</string>
+    <string name="roll">Roll</string>
+    <string name="title_activity_prepare_lemonade">PrepareLemonade</string>
+
+
+    <!--  Prepare Lemonade  -->
+    <string name="lemon_select">Toca el limonero para agarrar un limón.</string>
+    <string name="lemon_squeeze">Sigue presionando el limón para exprimirlo.</string>
+    <string name="lemon_drink">Toca la limonada para beberla.</string>
+    <string name="lemon_empty_glass">Toca el vaso vacío para empezar de nuevo.</string>
+    <!--  Content Descriptions of images  -->
+    <string name="lemon_tree_content_description">Lemon tree</string>
+    <string name="lemon_content_description">Lemon</string>
+    <string name="lemonade_content_description">Glass of lemonade</string>
+    <string name="empty_glass_content_description">Empty glass</string>
+    <string name="title_activity_view_with_toolbar_image">ViewWithToolbarImage</string>
+    <string name="title_activity_list_of_objects_with_lazy_column">ListOfObjectsWithLazyColumn
+    </string>
+    <string name="title_activity_list_of_example_exercises_views">ListOfExampleExercisesViews
+    </string>
+    <!--  Names of exercises views  -->
+    <string name="AdminTasks">AdminTasks</string>
+    <string name="AdminTasks_description">Un ejercicio donde se muestra una imagen con texto.</string>
+    <string name="ComposeQuadrant">ComposeQuadrant</string>
+    <string name="ComposeQuadrant_description">Un ejercicio donde se separa en cuadrantes textos en partes iguales.</string>
+    <string name="DiceRoller">DiceRoller</string>
+    <string name="DiceRoller_description">Un ejercicio donde se realiza giro a un dado.</string>
+    <string name="ListOfObjectsWithLazyColumn">ListOfObjectsWithLazyColumn</string>
+    <string name="ListOfObjectsWithLazyColumn_description">Un ejercicio donde se muestra una lista de datos haciendo uso de lazy column.</string>
+    <string name="PrepareLemonade">PrepareLemonade</string>
+    <string name="PrepareLemonade_description">Un ejercicio donde preparamos una limonada paso a paso con imagenes interactivas.</string>
+    <string name="PresentationCard">PresentationCard</string>
+    <string name="PresentationCard_description">Un ejercicio donde creamos una carta de presentacion</string>
+    <string name="ViewWithToolbarImage">ViewWithToolbarImage</string>
+    <string name="ViewWithToolbarImage_description">Un ejercicio donde agregamos una vista descriptiva con una imagen de toolbar.</string>
+</resources>
