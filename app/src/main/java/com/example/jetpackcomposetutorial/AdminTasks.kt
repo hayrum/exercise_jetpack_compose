@@ -19,6 +19,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackcomposetutorial.navigation.GetCustomToolbar
 import com.example.jetpackcomposetutorial.ui.theme.JetpackComposeTutorialTheme
+import com.example.jetpackcomposetutorial.ui.theme.getCustomColorOfTextBySystemOfTheme
 
 @Composable
 fun InitAdminTasks(navController: NavController) {
@@ -42,6 +43,7 @@ fun GetTaskCompleteComposeExample(
     modifier: Modifier = Modifier
 ) {
     val taskCompleteImage = painterResource(id = R.drawable.ic_task_completed)
+    val colorText = getCustomColorOfTextBySystemOfTheme()
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -55,17 +57,19 @@ fun GetTaskCompleteComposeExample(
         Text(
             text = title,
             fontWeight = FontWeight.Bold,
+            color = colorText,
             modifier = modifier
                 .padding(top = 24.dp, bottom = 8.dp)
         )
         Text(
             text = description,
+            color = colorText,
             fontSize = 16.sp
         )
     }
 }
 
-@Preview(showSystemUi = true)
+@Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     JetpackComposeTutorialTheme {

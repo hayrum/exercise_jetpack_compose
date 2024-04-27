@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,6 +22,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackcomposetutorial.navigation.GetCustomToolbar
 import com.example.jetpackcomposetutorial.ui.theme.JetpackComposeTutorialTheme
+import com.example.jetpackcomposetutorial.ui.theme.getCustomColorOfTextBySystemOfTheme
 
 @Composable
 fun InitComposeQuadrant(navController: NavController) {
@@ -45,13 +47,13 @@ fun ComposeQuadrantApp(modifier: Modifier = Modifier) {
             ComposableInfoCard(
                 title = stringResource(R.string.first_title),
                 description = stringResource(R.string.first_description),
-                backgroundColor = Color(0xFFEADDFF),
+                backgroundColor = MaterialTheme.colorScheme.secondary,
                 modifier = Modifier.weight(1f)
             )
             ComposableInfoCard(
                 title = stringResource(R.string.second_title),
                 description = stringResource(R.string.second_description),
-                backgroundColor = Color(0xFFD0BCFF),
+                backgroundColor = MaterialTheme.colorScheme.tertiary,
                 modifier = Modifier.weight(1f)
             )
         }
@@ -61,13 +63,13 @@ fun ComposeQuadrantApp(modifier: Modifier = Modifier) {
             ComposableInfoCard(
                 title = stringResource(R.string.third_title),
                 description = stringResource(R.string.third_description),
-                backgroundColor = Color(0xFFB69DF8),
+                backgroundColor = MaterialTheme.colorScheme.tertiary,
                 modifier = modifier.weight(1f)
             )
             ComposableInfoCard(
                 title = stringResource(R.string.fourth_title),
                 description = stringResource(R.string.fourth_description),
-                backgroundColor = Color(0xFFF6EDFF),
+                backgroundColor = MaterialTheme.colorScheme.secondary,
                 modifier = modifier.weight(1f)
             )
         }
@@ -91,19 +93,22 @@ fun ComposableInfoCard(
     ) {
         Text(
             text = title,
-            modifier = modifier.padding(bottom = 16.dp),
-            fontWeight = FontWeight.Bold
+            color = Color.Black,
+            fontWeight = FontWeight.Bold,
+            modifier = modifier.padding(bottom = 16.dp)
         )
         Text(
             text = description,
-            textAlign = TextAlign.Justify
+            color = Color.Black,
+            textAlign = TextAlign.Justify,
+            modifier = modifier
         )
     }
 }
 
-@Preview(showSystemUi = true)
+@Preview(showBackground = true)
 @Composable
-fun GreetingPreview2() {
+fun GetComposeQuadrantPreview() {
     JetpackComposeTutorialTheme {
         InitComposeQuadrant(rememberNavController())
     }

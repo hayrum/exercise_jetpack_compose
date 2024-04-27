@@ -2,6 +2,7 @@ package com.example.jetpackcomposetutorial
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -30,19 +31,19 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackcomposetutorial.navigation.GetCustomToolbar
 import com.example.jetpackcomposetutorial.ui.theme.JetpackComposeTutorialTheme
+import com.example.jetpackcomposetutorial.ui.theme.getCustomColorOfTextBySystemOfTheme
 
 @Composable
 fun InitPresentationCard(navController: NavController) {
     GetCustomToolbar(
         titleView = "PresentationCard",
         contentDescription = "Arrow Back",
-        containerColor = Color(0xFFD2E8D4),
         unitView = {
             GetAndroidDeveloper(
                 name = stringResource(R.string.developer_name),
                 rol = stringResource(R.string.android_developer_extraordinaire),
                 modifier = Modifier
-                    .background(Color(0xFFD2E8D4))
+                    .background(getBackgroundBySystemTheme())
             )
         },
         navController = navController
@@ -51,6 +52,7 @@ fun InitPresentationCard(navController: NavController) {
 
 @Composable
 fun GetAndroidDeveloper(name: String, rol: String, modifier: Modifier = Modifier) {
+    val colorText = getCustomColorOfTextBySystemOfTheme()
     Box(
         contentAlignment = Alignment.BottomCenter
     ) {
@@ -71,6 +73,7 @@ fun GetAndroidDeveloper(name: String, rol: String, modifier: Modifier = Modifier
             Text(
                 text = name,
                 fontSize = 32.sp,
+                color = colorText,
                 modifier = modifier
                     .padding(top = 16.dp)
             )
@@ -78,12 +81,13 @@ fun GetAndroidDeveloper(name: String, rol: String, modifier: Modifier = Modifier
                 text = rol,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color(0xFF5D9D78),
+                color = colorText,
                 modifier = modifier
                     .padding(top = 16.dp)
             )
         }
         GetContactNetworks(
+            colorText = colorText,
             modifier = modifier
                 .padding(top = 24.dp)
         )
@@ -91,7 +95,12 @@ fun GetAndroidDeveloper(name: String, rol: String, modifier: Modifier = Modifier
 }
 
 @Composable
-fun GetContactNetworks(modifier: Modifier = Modifier) {
+fun getBackgroundBySystemTheme(): Color {
+    return if (isSystemInDarkTheme()) Color.Black else Color(0xFFD2E8D4)
+}
+
+@Composable
+fun GetContactNetworks(colorText: Color, modifier: Modifier = Modifier) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
@@ -101,21 +110,24 @@ fun GetContactNetworks(modifier: Modifier = Modifier) {
             icon = Icons.Rounded.Call,
             contentDescription = stringResource(R.string.call_phone),
             description = stringResource(R.string.description_phone),
-            iconColor = Color(0xFF5D9D78),
+            iconColor = colorText,
+            colorText = colorText,
             modifier = modifier
         )
         GetNetwork(
             icon = Icons.Rounded.Share,
             contentDescription = stringResource(R.string.share),
             description = stringResource(R.string.description_share),
-            iconColor = Color(0xFF5D9D78),
+            iconColor = colorText,
+            colorText = colorText,
             modifier = modifier
         )
         GetNetwork(
             icon = Icons.Rounded.Email,
             contentDescription = stringResource(R.string.email),
             description = stringResource(R.string.description_email),
-            iconColor = Color(0xFF5D9D78),
+            iconColor = colorText,
+            colorText = colorText,
             modifier = modifier
         )
     }
@@ -127,6 +139,7 @@ fun GetNetwork(
     contentDescription: String,
     description: String,
     iconColor: Color,
+    colorText: Color,
     modifier: Modifier = Modifier
 ) {
     Row {
@@ -139,6 +152,7 @@ fun GetNetwork(
         )
         Text(
             text = description,
+            color = colorText,
             modifier = modifier
         )
     }

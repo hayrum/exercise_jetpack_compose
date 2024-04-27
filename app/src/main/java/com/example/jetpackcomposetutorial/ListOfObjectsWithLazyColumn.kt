@@ -30,6 +30,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackcomposetutorial.navigation.GetCustomToolbar
 import com.example.jetpackcomposetutorial.ui.theme.JetpackComposeTutorialTheme
+import com.example.jetpackcomposetutorial.ui.theme.getCustomColorOfTextBySystemOfTheme
 
 private val messages: List<MyMessage> = listOf(
     MyMessage(
@@ -143,6 +144,7 @@ fun MyImage() {
 
 @Composable
 fun MyTexts(myMessage: MyMessage) {
+    val colorText = getCustomColorOfTextBySystemOfTheme()
     var expanded by remember { mutableStateOf(false) }
     Column(modifier = Modifier
         .padding(start = 8.dp)
@@ -151,13 +153,13 @@ fun MyTexts(myMessage: MyMessage) {
         }) {
         MyText(
             text = myMessage.title,
-            MaterialTheme.colorScheme.primary,
+            colorText,
             MaterialTheme.typography.titleMedium
         )
         Spacer(modifier = Modifier.height(16.dp))
         MyText(
             text = myMessage.body,
-            MaterialTheme.colorScheme.primary,
+            colorText,
             MaterialTheme.typography.bodySmall,
             if (expanded) Int.MAX_VALUE else 1
         )

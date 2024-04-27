@@ -45,17 +45,26 @@
     </string>
     <!--  Names of exercises views  -->
     <string name="AdminTasks">AdminTasks</string>
-    <string name="AdminTasks_description">Un ejercicio donde se muestra una imagen con texto.</string>
-    <string name="ComposeQuadrant">ComposeQuadrant</string>
-    <string name="ComposeQuadrant_description">Un ejercicio donde se separa en cuadrantes textos en partes iguales.</string>
     <string name="DiceRoller">DiceRoller</string>
-    <string name="DiceRoller_description">Un ejercicio donde se realiza giro a un dado.</string>
-    <string name="ListOfObjectsWithLazyColumn">ListOfObjectsWithLazyColumn</string>
-    <string name="ListOfObjectsWithLazyColumn_description">Un ejercicio donde se muestra una lista de datos haciendo uso de lazy column.</string>
+    <string name="ComposeQuadrant">ComposeQuadrant</string>
     <string name="PrepareLemonade">PrepareLemonade</string>
-    <string name="PrepareLemonade_description">Un ejercicio donde preparamos una limonada paso a paso con imagenes interactivas.</string>
+    <string name="ListOfObjectsWithLazyColumn">ListOfObjectsWithLazyColumn</string>
     <string name="PresentationCard">PresentationCard</string>
-    <string name="PresentationCard_description">Un ejercicio donde creamos una carta de presentacion</string>
     <string name="ViewWithToolbarImage">ViewWithToolbarImage</string>
+    <string name="tip_time">Tip Time</string>
+    <!--  Descriptions labels of exercises view  -->
+    <string name="AdminTasks_description">Un ejercicio donde se muestra una imagen con texto.</string>
+    <string name="ComposeQuadrant_description">Un ejercicio donde se separa en cuadrantes textos en partes iguales.</string>
+    <string name="DiceRoller_description">Un ejercicio donde se realiza giro a un dado.</string>
+    <string name="ListOfObjectsWithLazyColumn_description">Un ejercicio donde se muestra una lista de datos haciendo uso de lazy column.</string>
+    <string name="PrepareLemonade_description">Un ejercicio donde preparamos una limonada paso a paso con imagenes interactivas.</string>
+    <string name="PresentationCard_description">Un ejercicio donde creamos una carta de presentacion</string>
     <string name="ViewWithToolbarImage_description">Un ejercicio donde agregamos una vista descriptiva con una imagen de toolbar.</string>
+    <string name="tip_time_description">Un ejercicio donde calculamos la propina.</string>
+    <!--  Tip time  -->
+    <string name="calculate_tip">Calcula la Propina</string>
+    <string name="bill_amount">Total del ticket</string>
+    <string name="tip_amount">Propina total: %s</string>
+    <string name="how_was_the_service">Porcentaje de propina</string>
+    <string name="round_up_tip">Quieres redondear?</string>
 </resources>

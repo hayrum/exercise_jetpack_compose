@@ -31,6 +31,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackcomposetutorial.navigation.GetCustomToolbar
 import com.example.jetpackcomposetutorial.ui.theme.JetpackComposeTutorialTheme
+import com.example.jetpackcomposetutorial.ui.theme.getCustomColorOfTextBySystemOfTheme
 
 @Composable
 fun InitPrepareLemonade(navController: NavController) {
@@ -112,6 +113,7 @@ fun LemonTextAndImage(
     onImageClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val colorText = getCustomColorOfTextBySystemOfTheme()
     Box(
         modifier = modifier
     ) {
@@ -137,7 +139,8 @@ fun LemonTextAndImage(
             Spacer(modifier = modifier.height(dimensionResource(id = R.dimen.padding_vertical)))
             Text(
                 text = stringResource(id = textLabelResourceId),
-                style = MaterialTheme.typography.bodyLarge
+                style = MaterialTheme.typography.bodyLarge,
+                color = colorText
             )
         }
     }

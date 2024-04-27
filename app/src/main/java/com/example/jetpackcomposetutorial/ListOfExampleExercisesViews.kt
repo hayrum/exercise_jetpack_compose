@@ -1,13 +1,19 @@
 package com.example.jetpackcomposetutorial
 
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -37,82 +43,80 @@ fun InitViewListOfExampleExercisesViews(navController: NavController) {
 
 @Composable
 fun ListOfExampleExercisesViews(navController: NavController, modifier: Modifier = Modifier) {
-    Column(modifier = modifier.fillMaxWidth()) {
-        Row(
-            modifier = modifier.weight(1f)
-        ) {
-            ComposableInfoView(
-                title = stringResource(id = R.string.AdminTasks),
-                description = stringResource(id = R.string.AdminTasks_description),
-                backgroundColor = Color(0xFFF8BBD0),
-                navController = navController,
-                route = AppScreens.AdminTasks.route,
-                modifier = Modifier.weight(2f)
-            )
-            ComposableInfoView(
-                title = stringResource(id = R.string.ComposeQuadrant),
-                description = stringResource(id = R.string.ComposeQuadrant_description),
-                backgroundColor = Color(0xFFFFCCBC),
-                navController = navController,
-                route = AppScreens.ComposeQuadrant.route,
-                modifier = Modifier.weight(2f)
-            )
-        }
-        Row(
-            modifier = modifier.weight(1f)
-        ) {
-            ComposableInfoView(
-                title = stringResource(id = R.string.DiceRoller),
-                description = stringResource(id = R.string.DiceRoller_description),
-                backgroundColor = Color(0xFFFFCCBC),
-                navController = navController,
-                route = AppScreens.DiceRoller.route,
-                modifier = Modifier.weight(2f)
-            )
-            ComposableInfoView(
-                title = stringResource(id = R.string.ListOfObjectsWithLazyColumn),
-                description = stringResource(id = R.string.ListOfObjectsWithLazyColumn_description),
-                backgroundColor = Color(0xFFF8BBD0),
-                navController = navController,
-                route = AppScreens.ListOfObjectsWithLazyColumn.route,
-                modifier = Modifier.weight(2f)
-            )
-        }
-        Row(
-            modifier = modifier.weight(1f)
-        ) {
-            ComposableInfoView(
-                title = stringResource(id = R.string.PrepareLemonade),
-                description = stringResource(id = R.string.PrepareLemonade_description),
-                backgroundColor = Color(0xFFFFCCBC),
-                navController = navController,
-                route = AppScreens.PrepareLemonade.route,
-                modifier = Modifier.weight(2f)
-            )
-            ComposableInfoView(
-                title = stringResource(id = R.string.PresentationCard),
-                description = stringResource(id = R.string.PresentationCard_description),
-                backgroundColor = Color(0xFFF8BBD0),
-                navController = navController,
-                route = AppScreens.PresentationCard.route,
-                modifier = Modifier.weight(2f)
-            )
-        }
-        Row(
-            modifier = modifier.weight(1f)
-        ) {
-            ComposableInfoView(
-                title = stringResource(id = R.string.ViewWithToolbarImage),
-                description = stringResource(id = R.string.ViewWithToolbarImage_description),
-                backgroundColor = Color(0xFFFFCCBC),
-                navController = navController,
-                route = AppScreens.ViewWithToolbarImage.route,
-                modifier = Modifier.weight(1f)
-            )
-        }
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+    ) {
+        ComposableInfoView(
+            title = stringResource(id = R.string.AdminTasks),
+            description = stringResource(id = R.string.AdminTasks_description),
+            backgroundColor = Color(0xFFF8BBD0),
+            navController = navController,
+            route = AppScreens.AdminTasks.route,
+            modifier = modifier
+        )
+        ComposableInfoView(
+            title = stringResource(id = R.string.ComposeQuadrant),
+            description = stringResource(id = R.string.ComposeQuadrant_description),
+            backgroundColor = Color(0xFFFFCCBC),
+            navController = navController,
+            route = AppScreens.ComposeQuadrant.route,
+            modifier = modifier
+        )
+        ComposableInfoView(
+            title = stringResource(id = R.string.DiceRoller),
+            description = stringResource(id = R.string.DiceRoller_description),
+            backgroundColor = Color(0xFFF8BBD0),
+            navController = navController,
+            route = AppScreens.DiceRoller.route,
+            modifier = modifier
+        )
+        ComposableInfoView(
+            title = stringResource(id = R.string.ListOfObjectsWithLazyColumn),
+            description = stringResource(id = R.string.ListOfObjectsWithLazyColumn_description),
+            backgroundColor = Color(0xFFFFCCBC),
+            navController = navController,
+            route = AppScreens.ListOfObjectsWithLazyColumn.route,
+            modifier = modifier
+        )
+        ComposableInfoView(
+            title = stringResource(id = R.string.PrepareLemonade),
+            description = stringResource(id = R.string.PrepareLemonade_description),
+            backgroundColor = Color(0xFFF8BBD0),
+            navController = navController,
+            route = AppScreens.PrepareLemonade.route,
+            modifier = modifier
+        )
+        ComposableInfoView(
+            title = stringResource(id = R.string.PresentationCard),
+            description = stringResource(id = R.string.PresentationCard_description),
+            backgroundColor = Color(0xFFFFCCBC),
+            navController = navController,
+            route = AppScreens.PresentationCard.route,
+            modifier = modifier
+        )
+        ComposableInfoView(
+            title = stringResource(id = R.string.ViewWithToolbarImage),
+            description = stringResource(id = R.string.ViewWithToolbarImage_description),
+            backgroundColor = Color(0xFFF8BBD0),
+            navController = navController,
+            route = AppScreens.ViewWithToolbarImage.route,
+            modifier = modifier
+        )
+        ComposableInfoView(
+            title = stringResource(id = R.string.tip_time),
+            description = stringResource(id = R.string.tip_time_description),
+            backgroundColor = Color(0xFFFFCCBC),
+            navController = navController,
+            route = AppScreens.TipTime.route,
+            modifier = modifier
+        )
     }
 }
 
+@VisibleForTesting
 @Composable
 fun ComposableInfoView(
     title: String,
@@ -122,26 +126,42 @@ fun ComposableInfoView(
     route: String,
     modifier: Modifier = Modifier
 ) {
-    Column(
-        modifier = modifier
+    val modifierColumn = if (isSystemInDarkTheme()) {
+        modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    } else {
+        modifier
             .fillMaxSize()
             .background(backgroundColor)
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+            .padding(16.dp)
+    }
+    Card(
+        modifier = modifier
+            .padding(16.dp)
     ) {
-        Button(onClick = {
-            navController.navigate(route = route)
-        }) {
+        Column(
+            modifier = modifierColumn,
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Text(
-                text = title,
+                text = description,
                 textAlign = TextAlign.Justify
             )
+            Button(
+                onClick = {
+                    navController.navigate(route = route)
+                },
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
+                modifier = modifier
+            ) {
+                Text(
+                    text = title,
+                    textAlign = TextAlign.Justify
+                )
+            }
         }
-        Text(
-            text = description,
-            textAlign = TextAlign.Justify
-        )
     }
 }
 

@@ -2,6 +2,7 @@ package com.example.jetpackcomposetutorial.navigation
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
@@ -32,8 +33,8 @@ fun GetCustomToolbar(
     titleView: String,
     imageVector: ImageVector = Icons.AutoMirrored.Filled.ArrowBack,
     contentDescription: String = stringResource(id = R.string.app_name),
-    containerColor: Color = MaterialTheme.colorScheme.primaryContainer,
-    titleContentColor: Color = MaterialTheme.colorScheme.primary,
+    containerColor: Color = MaterialTheme.colorScheme.primary,
+    titleContentColor: Color = MaterialTheme.colorScheme.onPrimary,
     unitView: @Composable () -> Unit,
     navController: NavController
 ) {
@@ -49,7 +50,16 @@ fun GetCustomToolbar(
                         )
                     },
                     navigationIcon = {
-                        Icon(imageVector = imageVector, contentDescription = contentDescription,
+                        val colorIcon =
+                            if (isSystemInDarkTheme()) {
+                                MaterialTheme.colorScheme.onBackground
+                            } else {
+                                MaterialTheme.colorScheme.background
+                            }
+                        Icon(
+                            imageVector = imageVector,
+                            contentDescription = contentDescription,
+                            tint = colorIcon,
                             modifier = Modifier
                                 .clickable {
                                     navController.popBackStack()
@@ -73,7 +83,6 @@ fun GetCustomToolbar(
 fun GetCustomToolbarPreview() {
     GetCustomToolbar(
         titleView = "PresentationCard",
-        containerColor = Color(0xFFD2E8D4),
         unitView = {},
         navController = rememberNavController()
     )

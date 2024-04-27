@@ -18,6 +18,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.jetpackcomposetutorial.navigation.GetCustomToolbar
 import com.example.jetpackcomposetutorial.ui.theme.JetpackComposeTutorialTheme
+import com.example.jetpackcomposetutorial.ui.theme.getCustomColorOfTextBySystemOfTheme
 
 
 @Composable
@@ -46,6 +47,7 @@ fun GetTutorialComposeExample(
     secondParagraph: String,
     modifier: Modifier = Modifier
 ) {
+    val colorText = getCustomColorOfTextBySystemOfTheme()
     val imageTop = painterResource(id = R.drawable.bg_compose_background)
     Column(modifier = modifier.verticalScroll(rememberScrollState())) {
         Image(
@@ -55,15 +57,18 @@ fun GetTutorialComposeExample(
         Text(
             text = title,
             fontSize = 24.sp,
+            color = colorText,
             modifier = modifier.padding(16.dp)
         )
         Text(
             text = firstParagraph,
+            color = colorText,
             textAlign = TextAlign.Justify,
             modifier = modifier.padding(16.dp)
         )
         Text(
             text = secondParagraph,
+            color = colorText,
             textAlign = TextAlign.Justify,
             modifier = modifier.padding(16.dp)
         )

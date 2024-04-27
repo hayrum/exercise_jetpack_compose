@@ -10,6 +10,7 @@ import com.example.jetpackcomposetutorial.InitDiceRoller
 import com.example.jetpackcomposetutorial.InitListOfObjectWithLazyColumn
 import com.example.jetpackcomposetutorial.InitPrepareLemonade
 import com.example.jetpackcomposetutorial.InitPresentationCard
+import com.example.jetpackcomposetutorial.InitTipTimeLayout
 import com.example.jetpackcomposetutorial.InitViewListOfExampleExercisesViews
 import com.example.jetpackcomposetutorial.InitViewWithToolbarImage
 
@@ -44,6 +45,9 @@ fun AppNavigation() {
         }
         composable(route = AppScreens.ViewWithToolbarImage.route) {
             InitViewWithToolbarImage(navController = navController)
+        }
+        composable(route = AppScreens.TipTime.route) {
+            InitTipTimeLayout(navController = navController)
         }
     }
 }
